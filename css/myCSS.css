@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 li {
   list-style-type: none;
@@ -18,14 +20,37 @@ p {
 ul {
   padding-left: 0;
 }
+.container{
+  /* max-width: initial; */
+}
 #header {
   border-bottom: 1px solid #f2f2f2;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 #banner {
   background-image: url("../images/banner.jpg");
   background-size: cover;
   color: #fff;
+}
+.cover_body {
+  padding-top: 350px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.12) 50%,
+    rgba(0, 0, 0, 0.52) 90%,
+    rgba(0, 0, 0, 0.76)
+  );
+}
+@media (max-width: 767px) {
+  .cover_body {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 991px) {
+  .cover_body {
+    /* padding-top: 150px; */
+    text-align: center;
+  }
 }
 #logo_head {
   width: 200px;
@@ -38,11 +63,46 @@ ul {
   justify-content: center;
   padding: 8px;
 }
+@media (max-width: 767px) {
+  #logo_head {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 991px) {
+  #logo_head {
+    float: inherit;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+  }
+}
 #name_head {
   padding: 60px 0 20px 260px;
 }
+@media (max-width: 991px) {
+  #name_head {
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  #name_head h1 {
+    font-size: 26px;
+    font-weight: 700;
+  }
+}
+@media (max-width: 991px) {
+  #name_head h1 {
+    margin-top: 0;
+  }
+}
 #menu {
   border-top: 1px solid #f2f2f2;
+}
+#menu li {
+  display: inline-block;
+  margin-right: 40px;
+  font-size: 16px;
 }
 #menu li a {
   display: inline-block;
@@ -60,6 +120,18 @@ ul {
   color: #14a0e6;
   border-bottom: 2px solid #14a0e6;
 }
+@media (max-width: 767px){
+  #menu li {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 991px){
+  #menu li {
+    margin-right: 10px;
+  }
+}
+
 /* .nav_fix{
     position: fixed; top: 0; left: 0; width: 100%;  z-index: 10;
 } */
@@ -68,6 +140,7 @@ ul {
 } */
 #main {
   padding-bottom: 40px;
+  background-color: #f5f5f5;
 }
 .main_top {
   text-align: center;
@@ -143,6 +216,21 @@ ul {
 .footer_top_right {
   padding: 40px 10px 40px 50px;
 }
+@media (min-width: 768px){
+  #footer-top .footer_top_right {
+    padding-left: 50px;
+    float: right;
+  }
+}
+@media (min-width: 768px){
+  /* .col-sm-5 {
+    width: 41.66666667%;
+  } */
+}
+/* .col-sm-5 {
+    width: 41.66666667%;
+} */
+
 #footer_body {
   font-size: 12px;
   padding: 10px 0;
@@ -163,11 +251,22 @@ ul {
 /* ---------------- */
 /* tuyendung.html */
 .main_search {
-  padding: 20px;
+  /* padding: 20px; */
   margin-bottom: 20px;
 }
+.input-group{
+  margin-bottom: 15px;
+}
 /* ---------------- */
-/* giiithieu.html */
+/* gioithieu.html */
+.border_wrapper {
+  border-right: 1px solid #c8c8c8;
+}
+@media (max-width: 991px){
+  #infor .border_wrapper {
+    border-right: none;
+  }
+}
 #images {
   padding-bottom: 40px;
 }
@@ -197,6 +296,7 @@ ul {
   text-align: left;
   margin: 10px 0;
 }
+
 /* ---------------- */
 /* đánh giá.html */
 .box {
@@ -204,7 +304,7 @@ ul {
   margin-bottom: 20px;
 }
 .box_white {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(255, 255, 255);
 }
 .review_title {
   font-size: 20px;
@@ -221,23 +321,18 @@ blockquote {
 /* ---------------- */
 /* responsive */
 @media screen and (max-width: 600px) {
-  
 }
 /* Dành cho điện thoại */
 @media all and (min-width: 320px) {
-    
 }
 /* Dành cho máy tính bảng chiều dọc */
 @media all and (min-width: 600px) {
-
 }
- 
+
 /* Dành cho máy tính bảng chiều ngang */
 @media all and (min-width: 1024px) {
-
 }
- 
+
 /* Dành cho màn hình desktop */
 @media all and (min-width: 1280px) {
-    
 }
