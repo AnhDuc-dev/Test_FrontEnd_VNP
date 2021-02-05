@@ -20,6 +20,20 @@ p {
 ul {
   padding-left: 0;
 }
+.btn-premium{
+  background-color: #0085c8;
+  border-color: #61d1ff;
+  border-radius: 1px;
+  color: #fff;
+  border: none;
+  padding: 8px 25px;
+}
+.btn-premium:hover, .btn-premium:focus{
+  background-color: #61d1ff;
+  color: #fff;
+  outline: none;
+}
+
 /* .container{
   max-width: initial;
 } */
@@ -98,6 +112,11 @@ ul {
 }
 #menu {
   border-top: 1px solid #f2f2f2;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; */
 }
 #menu li {
   display: inline-block;
@@ -140,7 +159,7 @@ ul {
 } */
 #main {
   padding-bottom: 40px;
-  background-color: #f5f5f5;
+  background-color: #fafafa;
 }
 .main_top {
   text-align: center;
@@ -158,21 +177,21 @@ ul {
 .main_bottom .item {
   padding: 15px 20px;
   background: #fff;
-  box-shadow: 0 1px 2px 1px rgb(206, 203, 203);
+  border: 1px solid #fafafa;
+  /* box-shadow: 0 1px 2px 1px rgb(206, 203, 203); */
   color: #777;
 }
 .main_bottom .item:hover {
-  border: 1px solid #b3b3b3;
+  box-shadow: 0 1px 2px 1px rgb(206, 203, 203);
+  /* border: 1px solid #b3b3b3; */
 }
 .main_bottom .item .title {
   text-transform: uppercase;
   padding-bottom: 15px;
 }
 #infor {
-  margin: 40px 0px;
-}
-#infor {
-  background-color: #fff;
+  /* background-color: #fff; */
+  margin: 40px auto;
 }
 #infor .item-box {
   font-size: 16px;
@@ -181,12 +200,12 @@ ul {
 }
 #infor .icon-box {
   font-size: 100px;
-  color: #777;
+  color: #cacaca;
 }
 #infor .val-box {
   font-size: 30px;
   font-weight: 700;
-  color: #14a0e6;
+  color: #0085c8;
 }
 #product_content {
   padding: 10px 70px;
@@ -258,6 +277,13 @@ ul {
 .input-group{
   margin-bottom: 15px;
 }
+.input-group-text{
+  color: rgb(112, 112, 112); 
+  background-color: #fff; 
+  font-size: 11px; 
+  line-height: 18px; 
+  color: #444;
+}
 /* ---------------- */
 /* gioithieu.html */
 .border_wrapper {
@@ -272,7 +298,7 @@ ul {
   padding-bottom: 40px;
 }
 #policy .policy_box {
-  min-height: 500px;
+  min-height: 400px;
   background: #fff;
   padding: 25px 20px;
   box-shadow: 0 1px 2px 2px #eee;
