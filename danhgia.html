@@ -13,7 +13,17 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/myCSS.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            var sticky = $('.sticky'),
+                scroll = $(window).scrollTop();
 
+            if (scroll >= 508) sticky.addClass('fixed');
+            else sticky.removeClass('fixed');
+        });
+    </script>
 </head>
 
 <body>
@@ -33,26 +43,28 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="menu">
-            <ul class="nav justify-content-center ">
-                <li class="nav-item">
-                    <a class="nav-link " href="index.html">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="tuyendung.html">Tuyển dụng</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="gioithieu.html">Giới thiệu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="danhgia.html">Đánh giá</a>
-                </li>
-            </ul>
+        <div class="sticky">
+            <div class="container">
+                <ul class="nav justify-content-center ">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="tuyendung.html">Tuyển dụng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="gioithieu.html">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="danhgia.html">Đánh giá</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div id="main">
         <!-- <div class="container" style="max-width: initial;"> -->
-        <div class="container" >
+        <div class="container">
             <div id="review">
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
@@ -60,30 +72,40 @@
                             <h2 style="font-size: 18px; font-weight: bold; color: #333;">Có 2 lượt đánh giá và nhận xét
                                 về <a href="#">Công ty TNHH Bibabo</a></h2>
                             <div class="row">
-                                <div class="col-sm-6 col-xs-12">
-                                    <div>
-                                        <label for="">Tổng quan</label>
+                                <div class="col-sm-6 col-xs-12 review-box">
+                                    <div class="rating">
+                                        <div>
+                                            <label for="">Tổng quan</label>
+                                        </div>
+                                        <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                            <span class="star-bar">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <span style="width: 88%;" class="active-star">
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <span
+                                            style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 20px;font-weight: 600;">4.4</span>
                                     </div>
-                                    <div class="rating" style="margin-top: 5px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star-half"></i>
-                                        </span>
-                                    </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4.4</span>
                                 </div>
                                 <div class="col-sm-6 col-xs-12" style="margin-top: 10px;">
-                                    <div class="row">
-                                        <div class="col-xs-4"><span id="c100">100%</span></div>
-                                        <div class="col-xs-8"
-                                            style="margin: 0 20px;; font-size: 15px;font-weight: bold;">
-                                            Sẵn sàng giới thiệu bạn bè
+                                    <div class="c100 p100 small">
+                                        <span>50%</span>
+                                        <div class="slicer">
+                                            <div class="bar border-premium"></div>
+                                            <div class="border-premium fill"></div>
                                         </div>
                                     </div>
+                                    <div class="review-overall-text bold"> Sẵn sàng giới thiệu bạn bè</div>
                                 </div>
                             </div>
                             <div style="border: 1px dashed #666; padding: 10px; margin-bottom: 15px;">
@@ -107,22 +129,31 @@
                             <strong>Điểm trung bình</strong>
                             <div class="row" style="padding-bottom: 10px;">
                                 <div class="col-sm-6">
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star-half"></i>
-                                        </span>
+                                    <div class="rating">
+                                        <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                            <span class="star-bar">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <span style="width: 88%;" class="active-star">
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <span
+                                            style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 20px;font-weight: 600;">4.5</span>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4.5</span>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="recommed">
                                         <p>
-                                            <i class="fas fa-thumbs-up"
+                                            <i class="fas fa-thumbs-up text-premium "
                                                 style="margin-right: 10px; font-size: 25px; float: left"></i><strong>Sẵn
                                                 sàng giới thiệu cho bạn bè</strong>
                                         </p>
@@ -139,105 +170,169 @@
                             </div>
                             <label for="" style="display: block; font-weight: bold;">Các tiêu chí đánh giá</label>
                             <div class="row" style="font-weight: bold;">
-                                <div class="col-sm-6 col-xs-12">
+                                <div class="col-sm-6 col-xs-12 rate-block">
                                     <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </span>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 60%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">3</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">3</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Văn phòng, công cụ làm việc</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 80%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">4</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Chế độ lương, thưởng</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 100%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">5</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">5</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Văn hóa công ty</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 80%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">4</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Đào tạo, học hỏi, trao đổi</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 80%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">4</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4</span>
                                 </div>
                             </div>
                         </div>
                         <div class="box box_white">
                             <div style="margin-bottom:20px">
                                 <i class="far fa-calendar-alt"
-                                    style="color:#0085c8 ;margin-right: 5px;font-size: 17px;"></i>04/08/2020
+                                    style="color:#0085c8 ;margin-right: 5px;font-size: 17px;"></i>27/08/2020
                             </div>
                             <div class="review_title">
-                                <strong>"Mọi thứ đều ổn"</strong>
+                                <strong>"Chế độ cũng ổn"</strong>
                             </div>
                             <strong>Điểm trung bình</strong>
                             <div class="row" style="padding-bottom: 10px;">
                                 <div class="col-sm-6">
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star-half"></i>
-                                        </span>
+                                    <div class="rating">
+                                        <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                            <span class="star-bar">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <span style="width: 88%;" class="active-star">
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                    <i class="fas fa-star active bg-premium"></i>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <span
+                                            style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 20px;font-weight: 600;">4.5</span>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4.5</span>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="recommed">
                                         <p>
-                                            <i class="fas fa-thumbs-up"
+                                            <i class="fas fa-thumbs-up text-premium "
                                                 style="margin-right: 10px; font-size: 25px; float: left"></i><strong>Sẵn
                                                 sàng giới thiệu cho bạn bè</strong>
                                         </p>
@@ -246,93 +341,148 @@
                             </div>
                             <div class="review_text">
                                 <strong>Điều tôi hài lòng</strong>
-                                <blockquote>Công ty có đội ngũ nhân viên trẻ, năng động</blockquote>
+                                <blockquote>Hơn 1 năm làm sale được 1-2 lần làm nhân viên xuất sắc tháng được thưởng
+                                    nóng, rồi tổng kết tháng Bibabo vinh danh. Cả công ty chắc Team tư vấn nhộn nhịp
+                                    nhất, làm ca tối ăn uống các thể loại. </blockquote>
                                 <strong>Điều tôi không hài lòng</strong>
-                                <blockquote>mang laptop khá nặng đó</blockquote>
+                                <blockquote>Nói chung là KPI thách thức, cảm thấy áp lực để đạt được.</blockquote>
                             </div>
                             <label for="" style="display: block; font-weight: bold;">Các tiêu chí đánh giá</label>
                             <div class="row" style="font-weight: bold;">
-                                <div class="col-sm-6 col-xs-12">
+                                <div class="col-sm-6 col-xs-12 rate-block">
                                     <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </span>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 60%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">3</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">5</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Văn phòng, công cụ làm việc</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 80%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">4</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Chế độ lương, thưởng</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 100%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">5</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">5</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Văn hóa công ty</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 80%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">4</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">4</span>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <label for="">Cơ hội thăng tiến</label>
-                                    <div class="rating" style="margin: 5px 15px; display: inline-block;">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </span>
+                                <div class="col-sm-6 col-xs-12 rate-block">
+                                    <label for="">Đào tạo, học hỏi, trao đổi</label>
+                                    <div class="rating-small">
+                                        <div class="rating">
+                                            <div class="rating-stars" style="margin-top: 5px; display: inline-block;">
+                                                <span class="star-bar">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span style="width: 80%;" class="active-star">
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                        <i class="fas fa-star active bg-premium"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span
+                                                style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8; font-size: 18px;font-weight: 600;">4</span>
+                                        </div>
                                     </div>
-                                    <span
-                                        style="display: inline-block; margin-left: 20px; margin-top: 0px; color: #0085c8">5</span>
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
-
                     </div>
                     <div class="col-md-4 col-xs-12">
                         <div class="title_contact">
                             Giới thiệu
                         </div>
-                        <div class="content_contact box_white"
-                            style="text-align: justify; padding: 20px; margin-bottom: 20px;">
+                        <div class="content_contact box_white" style="text-align: justify; padding: 20px; margin-bottom: 20px;">
                             <p>Giới thiệu</p>
                             <p>Bibabo là dịch vụ tiên phong về chăm sóc sức khỏe trực tuyến cho phụ nữ và gia đình. Được
                                 xây dựng và phát triển bởi đội ngũ sáng lập trẻ trung, nhiệt huyết và giàu kinh nghiệm
@@ -358,6 +508,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <div class="container-fluid" id="footer">
         <div id="footer_top">

@@ -13,6 +13,17 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/myCSS.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            var sticky = $('.sticky'),
+                scroll = $(window).scrollTop();
+
+            if (scroll >= 508) sticky.addClass('fixed');
+            else sticky.removeClass('fixed');
+        });
+    </script>
 
 </head>
 
@@ -33,24 +44,26 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="menu">
-            <ul class="nav justify-content-center ">
-                <li class="nav-item">
-                    <a class="nav-link " href="index.html">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="tuyendung.html">Tuyển dụng</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="gioithieu.html">Giới thiệu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="danhgia.html">Đánh giá</a>
-                </li>
-            </ul>
+        <div class="sticky">
+            <div class="container">
+                <ul class="nav justify-content-center ">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tuyendung.html">Tuyển dụng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="gioithieu.html">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="danhgia.html">Đánh giá</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div id="main">
+    <div id="main" >
         <div class="container">
             <div class="main_top">
                 <h3>Hiện tại đang tuyển dụng <span style="color: #0085c8;">6</span> vị trí</h3>
@@ -62,7 +75,7 @@
                             <div class="form-row">
                                 <div class="input-group col-sm-6 col-xs-12">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="addon-wrapping" ><i
+                                        <span class="input-group-text" id="addon-wrapping"><i
                                                 class="fas fa-search"></i></span>
                                     </div>
                                     <input type="text" class="form-control"
@@ -83,7 +96,7 @@
                                 </div>
                                 <div class="input-group col-sm-3 col-xs-12">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="addon-wrapping" ><i
+                                        <span class="input-group-text" id="addon-wrapping"><i
                                                 class="fas fa-tools"></i></span>
                                     </div>
                                     <select id="inputState" class="form-control">
@@ -101,7 +114,7 @@
                         </div>
                         <div class="col-sm-2">
                             <div class="row">
-                                <div class="input-group col-xs-12" >
+                                <div class="input-group col-xs-12">
                                     <button type="button" class="form-control btn btn-premium"><i
                                             class="fas fa-search"></i>
                                         Tìm kiếm</button>
